@@ -8,14 +8,15 @@ fetch('https://rickandmortyapi.com/api/character')
     return response.json();
 })
 .then(function(data){
-    
-    for (let i = 0; i<20; i++){
-    let character = data.results[i]
+    for (let i = 0; i<data.results.length; i++){
+    let character = data.results[i];
     characters += `
     <article class="personaje">
     <img src="${character.image}" alt='${character.name}'>
-     <p>Name: ${character.name}</p>
-     <p>Status: ${character.status} </p>
+    <a href="./detalle.html?id=${character.id}"> 
+        <p>Name: ${character.name}</p>
+    </a>
+    <p>Status: ${character.status} </p>
     </article>
     `;
     }
