@@ -15,7 +15,7 @@ fetch (`https://rickandmortyapi.com/api/character/?name=${info}`)
         for (i=0; i<data.results.length; i ++){
           let datos = data.results[i];  
             results.innerHTML += `
-            <article class="results">
+            <article>
                 <img src="${datos.image}" alt='${datos.name}'>
                 <p>Name: ${datos.name}</p>
                 <p>Status: ${datos.status}</p>
